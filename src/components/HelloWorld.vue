@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { storeToRefs } from "pinia";
+import { useMain } from "@/store/home";
 
 defineProps<{ msg: string }>();
+
+const main = useMain();
+const { counter, name, doubleCount } = storeToRefs(main);
+console.log(counter, name, doubleCount);
 
 const count = ref(0);
 </script>
