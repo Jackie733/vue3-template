@@ -12,15 +12,11 @@ export default defineConfig({
   },
   server: {
     port: 8080,
-    hmr: {
-      host: "localhost",
-      port: 8080
-    },
     proxy: {
       "/api": {
         target: "your https address",
         changeOrigin: true,
-        rewrite: (path: string) => path.replace(/^\/api/, "")
+        rewrite: (path) => path.replace(/^\/api/, "")
       }
     }
   }
