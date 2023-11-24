@@ -5,28 +5,20 @@ module.exports = {
     node: true
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:vue/vue3-essential",
-    "plugin:prettier/recommended"
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vue/vue3-essential',
+    'prettier',
+    'plugin:prettier/recommended'
   ],
-  overrides: [
-    {
-      env: {
-        node: true
-      },
-      files: [".eslintrc.{js,cjs}"],
-      parserOptions: {
-        sourceType: "script"
-      }
-    }
-  ],
-  parser: "vue-eslint-parser",
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    parser: "@typescript-eslint/parser",
-    sourceType: "module"
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
   },
-  plugins: ["@typescript-eslint", "vue"],
-  rules: {}
+  plugins: ['@typescript-eslint', 'vue', 'prettier'],
+  rules: {
+    'prettier/prettier': 'error'
+  }
 };
